@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Выгрузить файл из базы данных</title>
+</head>
+<body>
+    <form action="" method="post">
+        <select name="sel">
+            {% for i in images %}
+            <option value={{ i['name'] }}>{{ i['name'] }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Скачать файл">
+        {% for msg in get_flashed_messages() %}
+            <div class="flash">{{msg}}</div>
+        {% endfor %}
+  </form>
+
+</body>
+</html>
